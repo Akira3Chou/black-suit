@@ -12,6 +12,10 @@ import Button from "@components/Button/Button.astro";
 // images
 import heroImage from "@images/hero-bg-min.jpg";
 import heroImageMobile from "@images/hero-bg-min.jpg";
+
+const headerImg = "https://cdn.heixifu.com/home-page/hero-bg.webp";
+const headerImgMobile = "https://cdn.heixifu.com/home-page/hero-bg-mobile.jpg";
+
 ---
 
 <section id="hero" class="relative z-10 flex min-h-[100lvh] w-full">
@@ -20,19 +24,21 @@ import heroImageMobile from "@images/hero-bg-min.jpg";
 		<div class="absolute inset-0 bg-black/10"></div>
 
 		<Image
-			src={heroImage}
+			src={headerImg}
 			class="hidden h-auto min-h-full w-full object-cover object-bottom sm:block"
 			alt="wedding"
 			aria-hidden="true"
 			loading="eager"
+			inferSize={true}
 			height={1400}
 		/>
 		<Image
-			src={heroImageMobile}
+			src={headerImgMobile}
 			class="h-auto min-h-full w-full object-cover sm:hidden"
 			alt="wedding"
 			aria-hidden="true"
 			loading="eager"
+			inferSize={true}
 			width={1200}
 		/>
 	</div>
@@ -44,7 +50,7 @@ import heroImageMobile from "@images/hero-bg-min.jpg";
 			<h1
 				class="font-heading-1 text-4xl font-semibold text-pretty drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)] md:text-7xl md:leading-tight"
 			>
-				California Wedding Photography
+				Everything You Need is Already Inside
 			</h1>
 			<p
 				class="mt-8 text-lg tracking-widest text-pretty drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)] md:max-w-[550px] md:text-2xl"

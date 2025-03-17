@@ -54,4 +54,7 @@ export default defineConfig({
 			assetsInlineLimit: 0,
 		},
 	},
+	image: {
+		domains: ["https://cdn.heixifu.com/"],
+	}
 });
