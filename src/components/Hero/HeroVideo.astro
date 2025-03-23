@@ -1,0 +1,20 @@
+---
+
+import { CldVideoPlayer } from 'astro-cloudinary';
+
+const heroVideo = "https://cdn.heixifu.com/home-page/V001.MP4";
+
+---
+
+<section id="heroVideo" class="relative z-10 flex min-h-[100lvh] w-full">
+    <video id="heroVideoControl" src={heroVideo} loop="loop" autoplay="autoplay" muted="muted" playsinline="playsinline" controlslist="nodownload nofullscreen noremoteplayback"></video>
+</section>
+
+<script>
+
+const videoControl = document.getElementById('heroVideoControl');
+videoControl?.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+
+</script>

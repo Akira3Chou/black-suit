@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+
+const { id, imageUrl } = Astro.props;
+---
+
+<section id={id} class="relative z-10 my-1 flex min-h-[100lvh] w-full">
+	<!-- background image -->
+	<div class="absolute -z-10 h-full min-h-full w-full overflow-hidden">
+		<div class="absolute inset-0 bg-black/10"></div>
+
+		<Image
+			src={imageUrl}
+			class="singleImg hidden h-auto min-h-full w-full object-cover object-bottom sm:block"
+			alt="wedding"
+			aria-hidden="true"
+			loading="eager"
+			inferSize={true}
+			height={1400}
+		/>
+	</div>
+</section>

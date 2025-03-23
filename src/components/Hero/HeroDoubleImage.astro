@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+
+const firstImg = "https://cdn.heixifu.com/home-page/005.png";
+const secondImg = "https://cdn.heixifu.com/home-page/006.png";
+---
+
+<section id="heroDouble" class="relative z-10 flex min-h-[45lvh] w-full">
+	<!-- background image -->
+	<div class="absolute -z-10 h-full min-h-full w-full overflow-hidden bg-black">
+		<div class="flex h-full min-h-full w-full flex-row object-cover object-bottom">
+			<div class="h-full min-h-full w-1/2 overflow-hidden object-cover">
+				<Image
+					id="heroDoubleOfFirst"
+					src={firstImg}
+					class="h-auto w-full object-cover transition delay-150 duration-1000 ease-in-out hover:-translate-y-1 hover:scale-110"
+					alt="wedding"
+					aria-hidden="true"
+					loading="eager"
+					inferSize={true}
+				/>
+			</div>
+			<div class="h-full min-h-full w-1/2 overflow-hidden object-cover">
+				<Image
+					id="heroDoubleOfSecond"
+					src={secondImg}
+					class="h-auto w-full object-cover transition delay-150 duration-1000 ease-in-out hover:-translate-y-1 hover:scale-110"
+					alt="wedding"
+					aria-hidden="true"
+					loading="eager"
+					inferSize={true}
+				/>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	const heroDoubleOfFirst = document.getElementById("heroDoubleOfFirst");
+	heroDoubleOfFirst?.addEventListener("contextmenu", function (event) {
+		event.preventDefault();
+	});
+
+	const heroDoubleOfSecond = document.getElementById("heroDoubleOfSecond");
+	heroDoubleOfSecond?.addEventListener("contextmenu", function (event) {
+		event.preventDefault();
+	});
+</script>

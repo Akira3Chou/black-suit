@@ -6,6 +6,10 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 // components
 import Hero from "@components/Hero/Hero.astro";
+import HeroVideo from "@components/Hero/HeroVideo.astro";
+import HeroSingleImage from "@components/Hero/HeroSingleImage.astro";
+import HeroDoubleImage from "@components/Hero/HeroDoubleImage.astro";
+
 import FeatureNumbers from "@components/Feature/FeatureNumbers.astro";
 import PortfolioThreeCards from "@components/Portfolio/PortfolioThreeCards.astro";
 import Testimonials from "@components/Testimonials/Testimonials.astro";
@@ -20,10 +24,10 @@ import siteData from "@config/siteData.json";
 
 <BaseLayout title={siteData.title} description={siteData.description} navStartStyle="white">
 	<Hero />
-	<FeatureNumbers />
-	<PortfolioThreeCards />
-	<Testimonials />
-	<PricingThreeCards />
-	<About />
+	<HeroVideo />
+	<HeroSingleImage id="thirdOne" imageUrl="https://cdn.heixifu.com/home-page/004.jpg" />
+	<HeroDoubleImage />
+	<HeroSingleImage id="fifthOne" imageUrl="https://cdn.heixifu.com/home-page/007.jpg" />
+
 	<Contact />
 </BaseLayout>
