@@ -7,11 +7,9 @@ const { id, imageUrl } = Astro.props;
 <section id={id} class="relative z-10 my-1 flex min-h-[100lvh] w-full">
 	<!-- background image -->
 	<div class="absolute -z-10 h-full min-h-full w-full overflow-hidden">
-		<div class="absolute inset-0 bg-black/10"></div>
-
 		<Image
 			src={imageUrl}
-			class="singleImg hidden h-auto min-h-full w-full object-cover object-bottom sm:block"
+			class="singleImg h-auto min-h-full w-full object-cover transition delay-150 duration-1000 ease-in-out hover:-translate-y-1 hover:scale-110"
 			alt="wedding"
 			aria-hidden="true"
 			loading="eager"
@@ -20,3 +18,12 @@ const { id, imageUrl } = Astro.props;
 		/>
 	</div>
 </section>
+
+<script>
+	const singleImgs = document.getElementsByClassName("singleImg");
+	for (var i = 0; i < singleImgs.length; i++) {
+		singleImgs[i].addEventListener("contextmenu", function (event) {
+			event.preventDefault();
+		});
+	}
+</script>
