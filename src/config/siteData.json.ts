@@ -20,19 +20,19 @@ const siteData: SiteDataProps = {
 	// Your website's title and description (meta fields)
 	title: "BLACK SUIT",
 	description:
-		"Get your next website up and running quickly with our beautiful website theme designed using Astro and Tailwind CSS. Perfect for freelancers, developers, startups, and personal use.",
+		"We are a company focusing on providing a wide range of photography services to enterprises.We take good care of the image and deliver high-quality standard service to help you perform better and more efficiently on your Business.Our mission is to work together with you to build professional and classic corporate image, which will contribute positively to your business growth.",
 	useViewTransitions: true,
 	// Your information!
 	author: {
-		name: "Cosmic Themes",
-		email: "creator@cosmicthemes.com",
-		twitter: "Cosmic_Themes",
+		name: "Mr Li , Studio Manager",
+		email: "01@heixifu.com",
+		twitter: "BLACK_SUIT",
 	},
 
 	// default image for meta tags if the page doesn't have an image already
 	defaultImage: {
-		src: "/images/cosmic-themes-logo.jpg",
-		alt: "Cosmic Themes logo",
+		src: "/images/logo-min.png",
+		alt: "BLACK SUIT",
 	},
 };
 

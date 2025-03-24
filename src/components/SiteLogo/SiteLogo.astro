@@ -5,17 +5,15 @@ import { Image } from "astro:assets";
 import siteData from "@config/siteData.json";
 
 // images
-import logo from "@images/site-logo.png";
+import logo from "@assets/images/logo-min.png";
 ---
 
 <a class="primary-focus flex items-center align-middle" href="/" aria-label="Home" class="">
 	<!-- <Image
     src={logo}
-    alt="Cosmic Themes logo"
+    alt="BLACK SUIT"
     loading="eager"
-    width={100}
-    height={100}
-    class="h-14 w-14"
+    width={200}
   /> -->
-	<div class="font-heading-1 text-xl uppercase">{siteData.name}</div>
+	<div class="font-heading-1 text-4xl uppercase">{siteData.name}</div>
 </a>
