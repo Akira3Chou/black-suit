@@ -1,34 +1,129 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+
 const photos = [
-	"https://cdn.heixifu.com/%E8%82%96%E5%83%8F/1AQUAHELPERS%E9%AB%98%E7%AE%A1253%20%E6%8B%B7%E8%B4%9D%204.jpg",
-	"https://cdn.heixifu.com/%E8%82%96%E5%83%8F/3a00a258-53a8-67f8-bb97-f7f727e1b03a.jpg",
-	"https://cdn.heixifu.com/%E8%82%96%E5%83%8F/3a013c7d-3f09-0cc5-5a15-5b2292a2da0b.jpg",
-	"https://cdn.heixifu.com/%E8%82%96%E5%83%8F/617%E6%8B%8D%E6%91%840930%20%E6%8B%B7%E8%B4%9D%202.jpg",
-	"https://cdn.heixifu.com/%E8%82%96%E5%83%8F/815kWechatIMG37%20%E6%8B%B7%E8%B4%9D%202.jpg",
-	
+	"https://cdn.heixifu.com/portraits/001.jpg",
+	"https://cdn.heixifu.com/portraits/002.jpg",
+	"https://cdn.heixifu.com/portraits/003.jpg",
+	"https://cdn.heixifu.com/portraits/004.jpg",
+	"https://cdn.heixifu.com/portraits/005.jpg",
+	"https://cdn.heixifu.com/portraits/006.jpg",
+	"https://cdn.heixifu.com/portraits/007.jpg",
+	"https://cdn.heixifu.com/portraits/008.jpg",
+	"https://cdn.heixifu.com/portraits/009.jpg",
+	"https://cdn.heixifu.com/portraits/010.jpg",
+	"https://cdn.heixifu.com/portraits/011.jpg",
+	"https://cdn.heixifu.com/portraits/012.jpg",
+	"https://cdn.heixifu.com/portraits/013.jpg",
+	"https://cdn.heixifu.com/portraits/014.jpg",
+	"https://cdn.heixifu.com/portraits/015.jpg",
+	"https://cdn.heixifu.com/portraits/016.jpg",
+	"https://cdn.heixifu.com/portraits/017.jpg",
+	"https://cdn.heixifu.com/portraits/018.jpg",
+	"https://cdn.heixifu.com/portraits/019.jpg",
+	"https://cdn.heixifu.com/portraits/020.jpg",
+	"https://cdn.heixifu.com/portraits/021.jpg",
+	"https://cdn.heixifu.com/portraits/022.jpg",
+	"https://cdn.heixifu.com/portraits/023.jpg",
+	"https://cdn.heixifu.com/portraits/024.jpg",
+	"https://cdn.heixifu.com/portraits/025.jpg",
+	"https://cdn.heixifu.com/portraits/026.jpg",
+	"https://cdn.heixifu.com/portraits/027.jpg",
+	"https://cdn.heixifu.com/portraits/028.jpg",
+	"https://cdn.heixifu.com/portraits/029.jpg",
+	"https://cdn.heixifu.com/portraits/030.jpg",
+	"https://cdn.heixifu.com/portraits/031.jpg",
+	"https://cdn.heixifu.com/portraits/032.jpg",
+	"https://cdn.heixifu.com/portraits/033.jpg",
+	"https://cdn.heixifu.com/portraits/034.jpg",
+	"https://cdn.heixifu.com/portraits/035.jpg",
+	"https://cdn.heixifu.com/portraits/036.jpg",
+	"https://cdn.heixifu.com/portraits/037.jpg",
+	"https://cdn.heixifu.com/portraits/038.jpg",
+	"https://cdn.heixifu.com/portraits/039.jpg",
+	"https://cdn.heixifu.com/portraits/040.jpg",
+	"https://cdn.heixifu.com/portraits/041.jpg",
+	"https://cdn.heixifu.com/portraits/042.jpg",
+	"https://cdn.heixifu.com/portraits/043.jpg",
+	"https://cdn.heixifu.com/portraits/044.jpg",
+	"https://cdn.heixifu.com/portraits/045.jpg",
+	"https://cdn.heixifu.com/portraits/046.jpg",
+	"https://cdn.heixifu.com/portraits/047.jpg",
+	"https://cdn.heixifu.com/portraits/048.jpg",
+	"https://cdn.heixifu.com/portraits/049.jpg",
 ];
 ---
+
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	/* ---- grid ---- */
+
+	.grid {
+		background: #ddd;
+	}
+
+	/* clear fix */
+	.grid:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+
+	/* ---- .grid-item ---- */
+
+	.grid-sizer,
+	.grid-item {
+		width: 33.333%;
+	}
+
+	.grid-item {
+		float: left;
+	}
+
+	.grid-item img {
+		display: block;
+		max-width: 100%;
+	}
+</style>
 
 <BaseLayout
 	title="Portraits"
 	description="Capturing the essence of visionary leaders through powerful, professional portraits."
-	navStartStyle="white"
+	navStartStyle="default"
 >
-	<section id="portraits" class="relative z-10 flex min-h-[100lvh] w-full">
-		<div class="mx-auto px-4 py-8">
-			<div class="columns-1 gap-4 sm:columns-2 md:columns-3 lg:columns-4">
-				{
-					photos.map((photo) => (
-						<div class="mb-4 break-inside-avoid">
-							<img
-								src={photo}
-								class="w-full rounded-lg shadow-md transition-opacity hover:opacity-90"
-							/>
-						</div>
-					))
-				}
-			</div>
+	<section id="portraits" class="relative z-10 mt-20 flex min-h-[100lvh] w-full">
+		<div class="grid">
+			<div class="grid-sizer"></div>
+			{
+				photos.map((photo) => (
+					<div class="grid-item">
+						<img src={photo} />
+					</div>
+				))
+			}
 		</div>
 	</section>
 </BaseLayout>
+
+<script>
+	import imagesLoaded from "imagesloaded";
+
+	// Ensure Masonry is loaded globally
+	import Masonry from "masonry-layout";
+
+	var grid = document.querySelector(".grid");
+
+	var msnry = new Masonry(grid, {
+		itemSelector: ".grid-item",
+		columnWidth: ".grid-sizer",
+		percentPosition: true,
+	});
+
+	imagesLoaded(grid).on("progress", function () {
+		// layout Masonry after each image loads
+		msnry.layout();
+	});
+</script>
