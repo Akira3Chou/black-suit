@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import PortraitsScript from "@components/ExternalScripts/PortraitsScript.astro";
 
 const photos = [
 	"https://cdn.heixifu.com/portraits/001.jpg",
@@ -94,36 +95,49 @@ const photos = [
 	description="Capturing the essence of visionary leaders through powerful, professional portraits."
 	navStartStyle="default"
 >
-	<section id="portraits" class="relative z-10 mt-20 flex min-h-[100lvh] w-full">
-		<div class="grid">
-			<div class="grid-sizer"></div>
+	<section id="portraits" class="mt-20">
+		<div class="masonry-grid">
+			<div class="masonry-grid-sizer"></div>
 			{
 				photos.map((photo) => (
-					<div class="grid-item">
+					<div class="masonry-grid-item">
 						<img src={photo} />
 					</div>
 				))
 			}
 		</div>
 	</section>
+	<PortraitsScript />
 </BaseLayout>
 
-<script>
-	import imagesLoaded from "imagesloaded";
+<style>
+	/* ---- grid ---- */
 
-	// Ensure Masonry is loaded globally
-	import Masonry from "masonry-layout";
+	.masonry-grid {
+		/* background: #ddd; */
+	}
 
-	var grid = document.querySelector(".grid");
+	/* clear fix */
+	.masonry-grid:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
 
-	var msnry = new Masonry(grid, {
-		itemSelector: ".grid-item",
-		columnWidth: ".grid-sizer",
-		percentPosition: true,
-	});
+	/* ---- .grid-item ---- */
 
-	imagesLoaded(grid).on("progress", function () {
-		// layout Masonry after each image loads
-		msnry.layout();
-	});
-</script>
+	.masonry-grid-sizer,
+	.masonry-grid-item {
+		width: 24%;
+		margin: 1px;
+	}
+
+	.masonry-grid-item {
+		float: left;
+	}
+
+	.masonry-grid-item img {
+		display: block;
+		max-width: 100%;
+	}
+</style>

@@ -15,7 +15,7 @@ export type navItem = navLinkItem | navDropdownItem;
 const navConfig: navItem[] = [
 	{
 		text: "PORTRAITS",
-		link: "/",
+		link: "/portraits",
 	},
 	{
 		text: "VIDEOS",
