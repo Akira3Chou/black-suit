@@ -6,6 +6,7 @@ imagesLoaded( grid, function() {
   msnry = new Masonry( grid, {
     itemSelector: '.masonry-grid-item',
     columnWidth: '.masonry-grid-sizer',
-    horizontalOrder: true
+    horizontalOrder: true,
+    percentagePosition: true,
   });
 });
