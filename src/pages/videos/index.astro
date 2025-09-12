@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+const message = "Hello GSAP!";
+---
+
+<style>
+    .box {
+        width: 300px;
+        height: 300px;
+    }
+</style>
+
+<BaseLayout
+	title="BLACK SUIT | VIDEOS"
+	description="Storytelling in Motion - Capturing Vision, Leadership, and Brand Essence Through Cinematic Narratives."
+	navStartStyle="default"
+>
+	<!-- 组件模板部分 -->
+	<div id="animated-box" class="box">
+		{message}
+	</div>
+</BaseLayout>
+<script>
+	// 引入 GSAP
+	import { gsap } from "gsap";
+
+	// 页面加载后执行动画
+	document.addEventListener("DOMContentLoaded", () => {
+		gsap.to("#animated-box", {
+			x: 300,
+            y: 300,
+			rotation: 360,
+			duration: 2,
+			ease: "power2.out",
+			opacity: 1,
+		});
+	});
+</script>

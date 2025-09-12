@@ -19,7 +19,7 @@ const navConfig: navItem[] = [
 	},
 	{
 		text: "VIDEOS",
-		link: "/",
+		link: "/videos",
 	},
 	{
 		text: "ADVERTISING",
