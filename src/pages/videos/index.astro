@@ -1,38 +1,20 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-const message = "Hello GSAP!";
----
 
-<style>
-    .box {
-        width: 300px;
-        height: 300px;
-    }
-</style>
+import HeroVideo from "@components/Hero/HeroVideo.astro";
+
+---
 
 <BaseLayout
 	title="BLACK SUIT | VIDEOS"
 	description="Storytelling in Motion - Capturing Vision, Leadership, and Brand Essence Through Cinematic Narratives."
 	navStartStyle="default"
 >
-	<!-- 组件模板部分 -->
-	<div id="animated-box" class="box">
-		{message}
-	</div>
+	<section id="videos" class="mt-15">
+		<HeroVideo videoUrl="https://cdn.heixifu.com/video/001.mp4" autoPlay="autoplay" />
+		<HeroVideo videoUrl="https://cdn.heixifu.com/video/002.mp4" />
+		<HeroVideo videoUrl="https://cdn.heixifu.com/video/003.mp4" />
+		<HeroVideo videoUrl="https://cdn.heixifu.com/video/004.mp4" />
+		<HeroVideo videoUrl="https://cdn.heixifu.com/video/005.mp4" />
+	</section>
 </BaseLayout>
-<script>
-	// 引入 GSAP
-	import { gsap } from "gsap";
-
-	// 页面加载后执行动画
-	document.addEventListener("DOMContentLoaded", () => {
-		gsap.to("#animated-box", {
-			x: 300,
-            y: 300,
-			rotation: 360,
-			duration: 2,
-			ease: "power2.out",
-			opacity: 1,
-		});
-	});
-</script>

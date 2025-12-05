@@ -1,11 +1,11 @@
 ---
 
-const { videoUrl } = Astro.props;
+const { videoUrl, autoPlay } = Astro.props;
 
 ---
 
 <section id="heroVideo" class="relative z-10 flex min-h-[100lvh] w-full my-3">
-    <video id="heroVideoControl" src={videoUrl} loop="loop" autoplay="autoplay" muted="muted" playsinline="playsinline" controls controlslist="nodownload"></video>
+    <video id="heroVideoControl" class="w-full" src={videoUrl} loop="loop" autoplay={autoPlay} muted="muted" playsinline="playsinline" controls controlslist="nodownload"></video>
 </section>
 
 <script>
